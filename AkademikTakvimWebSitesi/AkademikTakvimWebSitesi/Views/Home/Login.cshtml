@@ -1,0 +1,40 @@
+﻿@model LoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+<div class="login-wrapper">
+    <div class="login-box">
+        <h1>Giriş Yap</h1>
+
+        <form method="POST" asp-action="Login">
+
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="input-group">
+                <input type="email" placeholder="Email" name="Email" value="@Model.Email">
+
+              
+            </div>
+
+            <div class="input-group password-group">
+                <input type="password" id="password" name="Sifre" placeholder="Şifre">
+               
+            
+                <span class="toggle-password" onclick="togglePassword()">👁</span>
+            </div>
+
+            <button type="submit" class="btn">Giriş Yap</button>
+            <div class="forgot-password">
+                <a asp-action="KayitOl">Kayıt Ol</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    function togglePassword() {
+        const passwordField = document.getElementById("password");
+        const type = passwordField.type === "password" ? "text" : "password";
+        passwordField.type = type;
+    }
+</script>

@@ -1,0 +1,59 @@
+﻿@model EventViewModel
+
+@{
+    ViewData["Title"] = "Etkinlik Düzenle";
+}
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Etkinlik Düzenle</h1>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div id="successMessage" class="alert alert-success">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+
+    <form id="editForm" asp-action="Edit" method="post">
+        <input type="hidden" asp-for="Id" />
+
+        <div class="mb-3">
+            <label for="Title" class="form-label">Başlık</label>
+            <input type="text" class="form-control" id="Title" asp-for="Title" required />
+        </div>
+
+        <div class="mb-3">
+            <label for="Description" class="form-label">Açıklama</label>
+            <textarea class="form-control" id="Description" asp-for="Description" rows="4" required></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="StartDate" class="form-label">Başlangıç Tarihi</label>
+            <input type="date" class="form-control" id="StartDate" asp-for="StartDate" required />
+        </div>
+
+        <div class="mb-3">
+            <label for="EndDate" class="form-label">Bitiş Tarihi</label>
+            <input type="date" class="form-control" id="EndDate" asp-for="EndDate" required />
+        </div>
+
+        <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary me-2">Güncelle</button>
+
+
+            <button type="button" class="btn btn-secondary" onclick="window.location.href='@Url.Action("Anasayfa", "Home")'">Ana Sayfaya Dön</button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <script>
+        var successMessage = document.getElementById('successMessage');
+        if (successMessage) {
+            setTimeout(function () {
+                successMessage.style.display = 'none';
+                window.location.href = '@Url.Action("Anasayfa", "Home")';
+            }, 2000);
+        }
+    </script>
+}

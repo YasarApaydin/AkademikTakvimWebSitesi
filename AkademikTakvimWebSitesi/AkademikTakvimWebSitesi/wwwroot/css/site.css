@@ -1,0 +1,200 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+/* Center and right-align the navbar content */
+.navbar-nav {
+    display: flex;
+    justify-content: flex-end; /* Align items to the right */
+    width: 100%;
+    align-items: center; 
+}
+
+/* Style for "Hoþ geldiniz" message */
+.welcome-text {
+    font-size: 18px; /* Increase font size */
+    font-weight: bold; /* Make the text bold */
+    color: #007bff; /* Change color to blue or any other color */
+    margin-right: 20px; /* Space between welcome message and logout button */
+    display: inline-block;
+    line-height: 1.5; /* Center text vertically */
+}
+
+/* Style for the "Çýkýþ Yap" button */
+.logout-btn {
+    font-size: 16px; /* Make the button text slightly smaller */
+    color: #dc3545; /* Use a red color to indicate logout */
+    padding: 5px 10px; /* Add some padding to the button */
+    border: none;
+    background: transparent;
+}
+
+    /* Optional: Make logout button hover effect */
+    .logout-btn:hover {
+        color: #fff; /* Change color to white on hover */
+        background-color: #dc3545; /* Make the background red when hovering */
+        border-radius: 5px; /* Optional: Rounded corners for button */
+    }
+
+
+.btn-sm {
+    margin-right: 10px;
+}
+
+
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+
+/* Genel Stiller */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #8e44ad, #3498db);
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Login Kutusu */
+.login-wrapper {
+    display: flex; /* Flexbox kullanarak hizalama */
+    justify-content: center; /* Yatayda merkezleme */
+    align-items: center; /* Dikeyde merkezleme */
+    height: 70vh; /* Sayfanýn tamamýný kapsar */
+  
+
+    margin: 0;
+}
+
+
+
+
+
+
+.login-box {
+    background: rgba(255, 255, 255, 0.5); /* Þeffaf arka plan */
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 30px;
+    backdrop-filter: blur(10px); /* Arka planý hafif bulanýklaþtýrýr */
+    width: 100%; /* Mobil uyumluluk için */
+    max-width: 400px; /* Maksimum geniþlik */
+}
+
+    .login-box h1 {
+        font-size: 24px;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+/* Giriþ Alanlarý */
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+    .input-group input {
+        width: 100%;
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 14px;
+        color: #333;
+        transition: border-color 0.3s ease-in-out;
+    }
+
+        .input-group input:focus {
+            border-color: #8e44ad;
+            outline: none;
+        }
+
+/* Þifre Göster/Gizle Butonu */
+.password-group {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    color: #8e44ad;
+    transition: color 0.3s ease-in-out;
+}
+
+    .toggle-password:hover {
+        color: #3498db;
+    }
+.alert {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 9999;
+}
+
+/* Giriþ Yap Butonu */
+.btn {
+    width: 80%;
+    padding: 10px;
+    background: #8e44ad;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+    .btn:hover {
+        background: #3498db;
+    }
+
+/* Þifremi Unuttum */
+.forgot-password {
+    margin-top: 15px;
+}
+
+    .forgot-password a {
+        color: #8e44ad;
+        text-decoration: none;
+        font-size: 14px;
+        transition: color 0.3s ease-in-out;
+    }
+
+        .forgot-password a:hover {
+            color: #3498db;
+        }
+nav.navbar {
+    position: fixed; /* Sayfanýn en üstüne sabitlenir */
+    top: 0; /* Üstten sýfýr piksel mesafede */
+    width: 100%; /* Geniþlik tam ekraný kaplar */
+    z-index: 1000; /* Üstteki diðer elementlerin üzerinde görünmesi için */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hafif bir gölge ekler */
+    background: rgba(240, 248, 255, 0.6);
+}
+body {
+    padding-top: 70px; /* Navbar'ýn yüksekliðine göre içerik aþaðý itilir */
+}

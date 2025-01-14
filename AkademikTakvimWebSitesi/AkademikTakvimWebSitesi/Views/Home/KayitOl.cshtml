@@ -1,0 +1,103 @@
+﻿@model RegisterViewModel
+@{
+    ViewData["Title"] = "KayıtOl";
+}
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div id="messageContainer" class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-header text-center">
+                    <h2>Kayıt Ol</h2>
+                </div>
+                <div class="card-body">
+                    <form method="post" asp-action="KayitOl">
+                        <div asp-validation-summary="All" class="text-danger"></div>
+                        <div class="mb-3">
+                            <label for="AdSoyad" class="form-label">Ad Soyad</label>
+                            <input type="text"
+                                   class="form-control"
+                                   id="AdSoyad"
+                                   name="AdSoyad"
+                                   placeholder="Adınızı ve Soyadınızı Giriniz"
+                                   required>
+                        </div>
+                        <span asp-validation-for="AdSoyad" class="text-danger"></span>
+                        <!-- Email -->
+                        <div class="mb-3">
+                            <label for="Email" class="form-label">E-Posta</label>
+                            <input type="email"
+                                   class="form-control"
+                                   id="Email"
+                                   name="Email"
+                                   placeholder="E-posta Adresinizi Giriniz"
+                                   required>
+                        </div>
+                        <span asp-validation-for="Email" class="text-danger"></span>
+
+                        <div class="mb-3">
+                            <label for="Sifre" class="form-label">Şifre</label>
+                            <input type="password"
+                                   class="form-control"
+                                   id="Sifre"
+                                   name="Sifre"
+                                   placeholder="Şifrenizi Giriniz (En Az 6 Karakter)"
+                                   minlength="6"
+                                   required>
+                        </div>
+                        <span asp-validation-for="Sifre" class="text-danger"></span>
+
+                        <div class="mb-3">
+                            <label for="SifreOnay" class="form-label">Şifre Onay</label>
+                            <input type="password"
+                                   class="form-control"
+                                   id="SifreOnay"
+                                   name="SifreOnay"
+                                   placeholder="Şifrenizi Tekrar Giriniz"
+                                   minlength="6"
+                                   required>
+                        </div>     @*<span asp-validation-for="SifreOnay" class="text-danger"></span>*@
+
+
+                        <div class="mb-3">
+                            <label for="GsmNo" class="form-label">Telefon Numarası</label>
+                            <input type="tel"
+                                   class="form-control"
+                                   id="GsmNo"
+                                   name="GsmNo"
+                                   placeholder="05XX XXX XXXX"
+                                   required>
+                        </div>
+                        <span asp-validation-for="GsmNo" class="text-danger"></span>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">Kayıt Ol</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer text-center">
+                    <small>Zaten bir hesabınız var mı? <a asp-action="Login">Giriş Yap</a></small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        var messageContainer = document.getElementById('messageContainer');
+        if (messageContainer) {
+            // 2 saniye sonra login sayfasına yönlendirecek
+            setTimeout(function () {
+                messageContainer.style.display = 'none';
+                window.location.href = '@Url.Action("Login", "Home")'; 
+            }, 2000); // 2 saniye bekleme
+        }
+    </script>
+}
